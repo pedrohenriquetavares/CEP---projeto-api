@@ -35,3 +35,9 @@ app.get('/consulta-cep/:cep', async (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);    
 });
+
+app.use(express.json());
+app.use('/api', rotas);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
